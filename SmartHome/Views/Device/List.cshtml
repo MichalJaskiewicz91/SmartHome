@@ -1,0 +1,22 @@
+﻿@model SmartHome.ViewModels.DevicesListViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Smart Home</title>
+</head>
+<body>
+    <h1>@Model.CurrentSection</h1>
+    @foreach (var device in Model.Devices)
+    {
+        <div>
+            <h2>@device.DeviceId.ToString()</h2>
+            <h2>@device.Name</h2>
+            @*<h2>@device.(string)Section</h2>*@
+        </div>
+    }
+
+</body>
+</html>

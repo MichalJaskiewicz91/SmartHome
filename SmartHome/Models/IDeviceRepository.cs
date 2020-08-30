@@ -7,7 +7,16 @@ namespace SmartHome.Models
 {
     public interface IDeviceRepository
     {
-        IEnumerable<Device> AllPies { get; }
+        /// <summary>
+        /// Get all devices
+        /// </summary>
+        IEnumerable<Device> AllDevices { get; }
+        /// <summary>
+        /// Get particular device by Id
+        /// </summary>
+        /// <param name="deviceId"></param>
+        /// <returns></returns>
         Device GetDeviceId(int deviceId);
+
     }
 }

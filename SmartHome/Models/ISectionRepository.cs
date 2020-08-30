@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 
 namespace SmartHome.Models
 {
-    public interface ISectionInterface
+    public interface ISectionRepository
     {
+        /// <summary>
+        /// Get all sections
+        /// </summary>
         IEnumerable<Section> AllSections { get; }
     }
 }
