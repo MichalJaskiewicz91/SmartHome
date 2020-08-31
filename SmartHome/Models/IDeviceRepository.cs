@@ -17,6 +17,10 @@ namespace SmartHome.Models
         /// <param name="deviceId"></param>
         /// <returns></returns>
         Device GetDeviceId(int deviceId);
+        /// <summary>
+        /// Get new device
+        /// </summary>
+        IEnumerable<Device> NewDevice { get; }
 
     }
 }

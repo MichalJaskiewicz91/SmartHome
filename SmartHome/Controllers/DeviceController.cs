@@ -25,6 +25,14 @@ namespace SmartHome.Controllers
 
             return View(deviceListViewModel);
         }
+        public IActionResult Details(int id)
+        {
+            var device = _deviceRepository.GetDeviceId(id);
+            if (device == null)
+                return NotFound();
+
+            return View(device);
+        }
         public IActionResult Index()
         {
             return View(); 

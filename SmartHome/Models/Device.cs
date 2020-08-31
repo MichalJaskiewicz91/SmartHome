@@ -13,5 +13,8 @@ namespace SmartHome.Models
         public string LongDescription { get; set; }
         public string ImageUrl { get; set; }
         public Section Section { get; set; }
+        public string ImageThumbnailUrl { get; set; }
+        public bool IsNew { get; set; }
+        public string Notes { get; set; }
     }
 }
