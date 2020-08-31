@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SmartHome.Models;
 
 namespace SmartHome.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200831112358_ShoppingCartAdded")]
+    partial class ShoppingCartAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,9 +46,6 @@ namespace SmartHome.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<int?>("SectionId")
                         .HasColumnType("int");
 
@@ -67,7 +66,6 @@ namespace SmartHome.Migrations
                             ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrypiesmall.jpg",
                             IsNew = true,
                             Name = "Lighting source",
-                            Price = 0m,
                             ShortDescription = "Lighting source for instance - LED"
                         },
                         new
@@ -77,7 +75,6 @@ namespace SmartHome.Migrations
                             ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cheesecakesmall.jpg",
                             IsNew = true,
                             Name = "Pump",
-                            Price = 0m,
                             ShortDescription = "Pump that allows water flow"
                         },
                         new
@@ -87,7 +84,6 @@ namespace SmartHome.Migrations
                             ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/rhubarbpiesmall.jpg",
                             IsNew = false,
                             Name = "Roller blind",
-                            Price = 0m,
                             ShortDescription = "Roller blind that allows window covering"
                         });
                 });

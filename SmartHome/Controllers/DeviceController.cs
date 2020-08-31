@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using SmartHome.Models;
 using SmartHome.ViewModels;
 
@@ -15,15 +17,29 @@ namespace SmartHome.Controllers
             _sectionRepository = sectionRepository;
         }
 
-        public ViewResult List()
+        public ViewResult List(string section)
         {
-            DevicesListViewModel deviceListViewModel = new DevicesListViewModel();
-            deviceListViewModel.Devices = _deviceRepository.AllDevices;
+            IEnumerable<Device> devices;
+            string currentSection;
 
-            deviceListViewModel.CurrentSection = "HVAC";
+            if (string.IsNullOrEmpty(section))
+            {
+                devices = _deviceRepository.AllDevices.OrderBy(d => d.DeviceId);
+                currentSection = "All devices";
+            }
+            else
+            {
+                devices = _deviceRepository.AllDevices.Where(d => d.Section.SectionName == section).OrderBy(d => d.DeviceId);
+                currentSection = _sectionRepository.AllSections.FirstOrDefault(s => s.SectionName == section)?.SectionName;
+            }
 
 
-            return View(deviceListViewModel);
+
+            return View(new DevicesListViewModel
+            {
+                Devices = devices,
+                CurrentSection = currentSection
+            });
         }
         public IActionResult Details(int id)
         {

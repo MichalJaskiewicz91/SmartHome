@@ -15,6 +15,7 @@ namespace SmartHome.Models
 
         public DbSet<Device> Devices { get; set; }
         public DbSet<Section> Sections { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

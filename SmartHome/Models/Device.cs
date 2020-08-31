@@ -16,5 +16,6 @@ namespace SmartHome.Models
         public string ImageThumbnailUrl { get; set; }
         public bool IsNew { get; set; }
         public string Notes { get; set; }
+        public decimal Price { get; set; }
     }
 }
