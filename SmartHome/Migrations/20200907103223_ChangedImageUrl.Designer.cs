@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SmartHome.Models;
 
 namespace SmartHome.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200907103223_ChangedImageUrl")]
+    partial class ChangedImageUrl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,8 +65,8 @@ namespace SmartHome.Migrations
                         new
                         {
                             DeviceId = 1,
-                            ImageThumbnailUrl = "E:\\Programowanie\\C#\\Projects\\ASP.NET CORE\\SmartHome\\SmartHome\\wwwroot\\images\\plug.png",
-                            ImageUrl = "E:\\Programowanie\\C#\\Projects\\ASP.NET CORE\\SmartHome\\SmartHome\\wwwroot\\images\\plug.png",
+                            ImageThumbnailUrl = "~/images/plug.png",
+                            ImageUrl = "~/images/plug.png",
                             IsNew = true,
                             Name = "Lighting source",
                             Price = 0m,

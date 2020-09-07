@@ -17,5 +17,7 @@ namespace SmartHome.Models
         public bool IsNew { get; set; }
         public string Notes { get; set; }
         public decimal Price { get; set; }
+        public int SectionId { get; set; }
+
     }
 }

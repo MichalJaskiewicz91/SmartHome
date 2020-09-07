@@ -33,10 +33,11 @@ namespace SmartHome.Models
                 DeviceId = 1,
                 Name = "Lighting source",
                 ShortDescription = "Lighting source for instance - LED",
-                ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrypiesmall.jpg",
+                ImageUrl = "",
                 IsNew = true,
-                ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrypiesmall.jpg",
-            });
+                ImageThumbnailUrl = "",
+                SectionId = 1,
+            });;
 
             modelBuilder.Entity<Device>().HasData(new Device
             {
@@ -46,6 +47,7 @@ namespace SmartHome.Models
                 ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cheesecakesmall.jpg",
                 IsNew = true,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cheesecakesmall.jpg",
+                SectionId = 2,
             });
 
             modelBuilder.Entity<Device>().HasData(new Device
@@ -56,6 +58,7 @@ namespace SmartHome.Models
                 ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/rhubarbpiesmall.jpg",
                 IsNew = false,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/rhubarbpiesmall.jpg",
+                SectionId = 3,
             });
 
 
