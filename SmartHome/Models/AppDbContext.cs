@@ -33,9 +33,9 @@ namespace SmartHome.Models
                 DeviceId = 1,
                 Name = "Lighting source",
                 ShortDescription = "Lighting source for instance - LED",
-                ImageUrl = "",
+                ImageUrl = "~/images/Light.png",
                 IsNew = true,
-                ImageThumbnailUrl = "",
+                ImageThumbnailUrl = "~/images/Light.png",
                 SectionId = 1,
             });;
 
