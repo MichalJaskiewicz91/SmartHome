@@ -27,6 +27,7 @@
                         @await Component.InvokeAsync("SectionMenu")
                     <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
                         @await Component.InvokeAsync("ShoppingCartSummary")
+                        <partial name="_LoginPartial"/>
                     </ul>
                 </div>
             </div>
@@ -43,6 +44,7 @@
             </div>
         </div>
     </div>
+    @RenderSection("Scripts", required:false)
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/bootstrap_3_3_7/js/bootstrap.js"></script>
 </body>
